@@ -1,0 +1,5 @@
+*.pyc
+.idea/
+config.ini
+audio.mp3
+venv/

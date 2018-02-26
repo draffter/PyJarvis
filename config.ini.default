@@ -1,0 +1,12 @@
+[DEFAULT]
+interpreter_lang = pl_PL
+tts_lang = pl
+
+[WEATHER]
+api_key = your_openweather.com_api_key
+city = poznan,pl
+lang = pl
+units = metric
+
+[KODI]
+port = 80
