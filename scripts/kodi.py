@@ -58,4 +58,4 @@ class Kodi(object):
     def get_item(self):
         self._get_player_status()
         self._send("Player.GetProperties", {"properties": ["speed", "position", "time", "playlistid"], "playerid": self.player_id})
-        self._send("Player.GetItem", {"properties": ["duration"], "playerid": self.player_id})
+        self._send("Player.GetItem", {"properties": ["duration","title","album","artist","season","episode","showtitle","tvshowid","thumbnail","file","fanart","streamdetails"], "playerid": self.player_id})

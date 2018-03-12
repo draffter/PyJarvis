@@ -1,12 +1,12 @@
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import snowboydecoder
 import speech_recognition as sr
 from speaker import Speaker
 from scripts.weather import Weather
 from scripts.kodi import Kodi
+from scripts.calendar import Calendar
 
 class Interpreter(object):
-
     def __init__(self, config):
         self.config = config
         self.weather = Weather(
@@ -17,13 +17,15 @@ class Interpreter(object):
         )
         self.kodi = Kodi(port=self.config.get_string("KODI", "port"))
         self.recognizer = sr.Recognizer()
+        self.calendar = Calendar()
 
     def calibrate(self, callback):
-        Speaker.talk(u"Uruchamiam moduły systemu Dżarwis")
+        Speaker.talk(_("jarvis.initialize.start"))
         with sr.Microphone() as source:
             self.recognizer.adjust_for_ambient_noise(source, 2)
         self.recognizer.dynamic_energy_threshold = True
-        Speaker.talk(u"wszystkie systemy sprawne")
+        # u"wszystkie systemy sprawne"
+        Speaker.talk(_("jarvis.initialize.end"))
         callback()
 
     def listen(self):
@@ -32,7 +34,8 @@ class Interpreter(object):
             audio = self.recognizer.listen(source)
         snowboydecoder.play_audio_file(snowboydecoder.DETECT_DONG)
         try:
-            data = self.recognizer.recognize_google(audio, language=self.config.get_string("DEFAULT", "interpreter_lang"))
+            data = self.recognizer.recognize_google(audio,
+                                                    language=self.config.get_string("DEFAULT", "interpreter_lang"))
             print("You said: " + data)
             self.call_function(data)
         except sr.UnknownValueError:
@@ -42,17 +45,18 @@ class Interpreter(object):
             print("Could not request results from Google Speech Recognition service; {0}".format(e))
             snowboydecoder.play_audio_file("resources/error.wav")
 
-
-
     def call_function(self, data):
         data = data.lower()
-        if u"pogoda" in data:
+
+        if _("weather") in data:
             Speaker.talk(self.weather.get_one_day())
-        elif data == u"zatrzymaj film":
+        elif data == _('film.pause'):
             self.kodi.pause()
-        elif data == u"włącz film" or data == u"odtwarzaj":
+        elif data == _("film.resume") or data == _("film.play"):
             self.kodi.resume()
         elif data == u"pobierz dane":
             self.kodi.get_item()
+        elif _("date.hour") in data:
+            self.calendar.get_time()
         else:
-            Speaker.talk(u"nie rozpoznałam komendy")
+            Speaker.talk(_("command.unknown"))

@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from webcrawler import WebCrawler
-from speaker import Speaker
 import urllib
 import json
 
@@ -15,7 +14,6 @@ class Weather(object):
         self.uri = "http://api.openweathermap.org/data/2.5/weather"
 
     def get_one_day(self):
-        Speaker.talk(u"sprawdzam pogodę")
         params = {'q': self.city, 'appid': self.api_key, 'lang': self.lang, 'units': self.units}
         uri = self.uri + "?" + urllib.urlencode(params, True)
         print uri
