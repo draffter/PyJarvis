@@ -5,6 +5,8 @@ from speaker import Speaker
 from scripts.weather import Weather
 from scripts.kodi import Kodi
 from scripts.calendar import Calendar
+from translator import ngettext
+
 
 class Interpreter(object):
     def __init__(self, config):
@@ -24,7 +26,6 @@ class Interpreter(object):
         with sr.Microphone() as source:
             self.recognizer.adjust_for_ambient_noise(source, 2)
         self.recognizer.dynamic_energy_threshold = True
-        # u"wszystkie systemy sprawne"
         Speaker.talk(_("jarvis.initialize.end"))
         callback()
 

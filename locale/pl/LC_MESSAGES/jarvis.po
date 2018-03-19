@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-03-12 19:08+0100\n"
-"PO-Revision-Date: 2018-03-12 19:10+0100\n"
+"POT-Creation-Date: 2018-03-19 20:48+0100\n"
+"PO-Revision-Date: 2018-03-19 20:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -21,7 +21,7 @@ msgstr ""
 "X-Poedit-SearchPath-5: scripts/kodi.py\n"
 "X-Poedit-SearchPath-6: scripts/weather.py\n"
 
-#: interpreter.py:24
+#: interpreter.py:25
 msgid "jarvis.initialize.start"
 msgstr "uruchamiam moduły systemu Dżarwis"
 
@@ -52,3 +52,36 @@ msgstr "godzina"
 #: interpreter.py:63
 msgid "command.unknown"
 msgstr "komenda nie została rozpoznana"
+
+#: scripts/weather.py:27
+msgid "weather.actual"
+msgstr "aktualna pogoda to"
+
+#: scripts/weather.py:35
+#, python-format
+msgid "%d weather.degree"
+msgid_plural "%d weather.degrees"
+msgstr[0] "%d stopień"
+msgstr[1] "%d stopnie"
+msgstr[2] "%d stopni"
+
+#~ msgid "%d krowa"
+#~ msgid_plural "%d krowy"
+#~ msgstr[0] "%d kaczka"
+#~ msgstr[1] "%d ogórki"
+#~ msgstr[2] "%d pomidory"
+
+#~ msgid "%d kucyk"
+#~ msgid_plural "%d kucyki"
+#~ msgstr[0] "%d kucyk"
+#~ msgstr[1] "%d kucyki"
+#~ msgstr[2] "%d kucyków"
+
+#~ msgid "konik"
+#~ msgstr "słonik-konik"
+
+#~ msgid "%d Comment"
+#~ msgid_plural "%d Comments"
+#~ msgstr[0] "%d komentarz"
+#~ msgstr[1] "%d komentarze"
+#~ msgstr[2] "%d komentarzy"
