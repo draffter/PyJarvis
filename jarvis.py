@@ -12,8 +12,8 @@ class Jarvis(object):
         self.config = Config()
         self.interpreter = Interpreter(self.config)
         self.model = "resources/JARVIS.pmdl"
-        self.sensitivity = 0.5
-        self.audio_gain = 1.5
+        self.sensitivity = 0.7
+        self.audio_gain = 1.2
         self.detector = snowboydecoder.HotwordDetector(self.model, sensitivity=self.sensitivity,
                                                        audio_gain=self.audio_gain)
         self.interpreter.calibrate(self.run)
@@ -31,3 +31,5 @@ class Jarvis(object):
 
 if __name__ == '__main__':
     c = Jarvis()
+    # from speaker import Speaker
+    # Speaker.test();

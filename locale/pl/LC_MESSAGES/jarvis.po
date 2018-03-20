@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-03-19 20:48+0100\n"
-"PO-Revision-Date: 2018-03-19 20:49+0100\n"
+"POT-Creation-Date: 2018-03-20 19:48+0100\n"
+"PO-Revision-Date: 2018-03-20 19:50+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -45,15 +45,45 @@ msgstr "wznów film"
 msgid "film.play"
 msgstr "włącz"
 
-#: interpreter.py:60
+#: interpreter.py:58
+msgid "film.status"
+msgstr "status filmu"
+
+#: interpreter.py:62
 msgid "date.hour"
 msgstr "godzina"
 
-#: interpreter.py:63
+#: interpreter.py:65
 msgid "command.unknown"
 msgstr "komenda nie została rozpoznana"
 
-#: scripts/weather.py:27
+#: scripts/kodi.py:56
+msgid "movie.is_stopped"
+msgstr "odtwarzanie jest zatrzymane"
+
+#: scripts/kodi.py:58 scripts/kodi.py:65 scripts/kodi.py:74
+msgid "movie.nothing_played"
+msgstr "nic nie jest odtwarzane"
+
+#: scripts/kodi.py:67
+msgid "movie.is_not_paused"
+msgstr "film nie jest zatrzymany"
+
+#: scripts/kodi.py:80
+#, python-format
+msgid "movie.watching %s "
+msgstr "oglądasz %s "
+
+#: scripts/kodi.py:80
+#, python-format
+msgid "movie.end_time %s"
+msgstr "koniec o godzinie %s"
+
+#: scripts/kodi.py:85
+msgid "kodi.error"
+msgstr "wystąpił problem z pobraniem danych z kodi"
+
+#: scripts/weather.py:28
 msgid "weather.actual"
 msgstr "aktualna pogoda to"
 
@@ -64,24 +94,3 @@ msgid_plural "%d weather.degrees"
 msgstr[0] "%d stopień"
 msgstr[1] "%d stopnie"
 msgstr[2] "%d stopni"
-
-#~ msgid "%d krowa"
-#~ msgid_plural "%d krowy"
-#~ msgstr[0] "%d kaczka"
-#~ msgstr[1] "%d ogórki"
-#~ msgstr[2] "%d pomidory"
-
-#~ msgid "%d kucyk"
-#~ msgid_plural "%d kucyki"
-#~ msgstr[0] "%d kucyk"
-#~ msgstr[1] "%d kucyki"
-#~ msgstr[2] "%d kucyków"
-
-#~ msgid "konik"
-#~ msgstr "słonik-konik"
-
-#~ msgid "%d Comment"
-#~ msgid_plural "%d Comments"
-#~ msgstr[0] "%d komentarz"
-#~ msgstr[1] "%d komentarze"
-#~ msgstr[2] "%d komentarzy"

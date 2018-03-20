@@ -55,8 +55,8 @@ class Interpreter(object):
             self.kodi.pause()
         elif data == _("film.resume") or data == _("film.play"):
             self.kodi.resume()
-        elif data == u"pobierz dane":
-            self.kodi.get_item()
+        elif data == _("film.status"):
+            self.kodi.film_status()
         elif _("date.hour") in data:
             self.calendar.get_time()
         else:
