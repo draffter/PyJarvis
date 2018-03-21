@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-03-20 19:48+0100\n"
-"PO-Revision-Date: 2018-03-20 19:50+0100\n"
+"POT-Creation-Date: 2018-03-21 22:23+0100\n"
+"PO-Revision-Date: 2018-03-21 22:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pl_PL\n"
@@ -30,57 +30,62 @@ msgid "jarvis.initialize.end"
 msgstr "wszystkie systemy sprawne"
 
 #: interpreter.py:52
-msgid "weather"
+msgid "command.weather"
 msgstr "pogoda"
 
 #: interpreter.py:54
-msgid "film.pause"
+msgid "command.film.pause"
 msgstr "zatrzymaj film"
 
 #: interpreter.py:56
-msgid "film.resume"
+msgid "command.film.resume"
 msgstr "wznów film"
 
 #: interpreter.py:56
-msgid "film.play"
+msgid "command.film.play"
 msgstr "włącz"
 
 #: interpreter.py:58
-msgid "film.status"
+msgid "command.film.status"
 msgstr "status filmu"
 
-#: interpreter.py:62
-msgid "date.hour"
+#: interpreter.py:60
+msgid "command.date.hour"
 msgstr "godzina"
 
-#: interpreter.py:65
-msgid "command.unknown"
+#: interpreter.py:63
+msgid "speak.command.unknown"
 msgstr "komenda nie została rozpoznana"
 
-#: scripts/kodi.py:56
-msgid "movie.is_stopped"
+#: scripts/calendar.py:10
+#, python-format
+msgid "speak.calendar.hour %s "
+msgstr "jest godzina %s "
+
+#: scripts/kodi.py:57
+msgid "speak.movie.is_stopped"
 msgstr "odtwarzanie jest zatrzymane"
 
-#: scripts/kodi.py:58 scripts/kodi.py:65 scripts/kodi.py:74
-msgid "movie.nothing_played"
+#: scripts/kodi.py:59 scripts/kodi.py:66 scripts/kodi.py:75
+msgid "speak.movie.nothing_played"
 msgstr "nic nie jest odtwarzane"
 
-#: scripts/kodi.py:67
-msgid "movie.is_not_paused"
+#: scripts/kodi.py:68
+msgid "speak.movie.is_not_paused"
 msgstr "film nie jest zatrzymany"
 
-#: scripts/kodi.py:80
+#: scripts/kodi.py:81 scripts/kodi.py:84
 #, python-format
-msgid "movie.watching %s "
+msgid "speak.movie.watching %s "
 msgstr "oglądasz %s "
 
-#: scripts/kodi.py:80
+#: scripts/kodi.py:81 scripts/kodi.py:86
 #, python-format
-msgid "movie.end_time %s"
+msgid "speak.movie.end_time %s"
 msgstr "koniec o godzinie %s"
 
-#: scripts/kodi.py:85
-msgid "kodi.error"
+#: scripts/kodi.py:91
+msgid "speak.kodi.error"
 msgstr "wystąpił problem z pobraniem danych z kodi"
 
 #: scripts/weather.py:28
@@ -89,8 +94,8 @@ msgstr "aktualna pogoda to"
 
 #: scripts/weather.py:35
 #, python-format
-msgid "%d weather.degree"
-msgid_plural "%d weather.degrees"
+msgid "%d speak.weather.degree"
+msgid_plural "%d speak.weather.degrees"
 msgstr[0] "%d stopień"
 msgstr[1] "%d stopnie"
 msgstr[2] "%d stopni"

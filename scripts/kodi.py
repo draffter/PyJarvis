@@ -54,41 +54,41 @@ class Kodi(object):
     def pause(self):
         self._get_player_status()
         if self.paused:
-            Speaker.talk(_("movie.is_stopped"))
+            Speaker.talk(_("speak.movie.is_stopped"))
         if not self.playing:
-            Speaker.talk(_("movie.nothing_played"))
+            Speaker.talk(_("speak.movie.nothing_played"))
         else:
             self._send("Player.PlayPause", {"playerid": self.player_id})
 
     def resume(self):
         self._get_player_status()
         if not self.playing:
-            Speaker.talk(_("movie.nothing_played"))
+            Speaker.talk(_("speak.movie.nothing_played"))
         elif not self.paused:
-            Speaker.talk(_("movie.is_not_paused"))
+            Speaker.talk(_("speak.movie.is_not_paused"))
         else:
             self._send("Player.PlayPause", {"playerid": self.player_id})
 
     def film_status(self):
         self._get_player_status()
         if not self.playing:
-            Speaker.talk(_("movie.nothing_played"))
+            Speaker.talk(_("speak.movie.nothing_played"))
         else:
             try:
                 movie_name = self.get_movie_name()
                 movie_time = self.get_movie_time()
                 if self.same_language:
-                    s =_("movie.watching %s ") % movie_name + _("movie.end_time %s") % movie_time
+                    s =_("speak.movie.watching %s ") % movie_name + _("speak.movie.end_time %s") % movie_time
                     Speaker.talk(s)
                 else:
-                    Speaker.add_text(_("movie.watching %s ") % "", self.tts_language)
+                    Speaker.add_text(_("speak.movie.watching %s ") % "", self.tts_language)
                     Speaker.add_text(movie_name, self.library_language)
-                    Speaker.add_text( _("movie.end_time %s") % movie_time, self.tts_language)
+                    Speaker.add_text( _("speak.movie.end_time %s") % movie_time, self.tts_language)
                     Speaker.make_out_file()
                     Speaker.play()
 
             except KodiException:
-                Speaker.talk(_("kodi.error"))
+                Speaker.talk(_("speak.kodi.error"))
 
     def get_movie_name(self):
         movie_item = self._send("Player.GetItem", {"properties": ["title"], "playerid": self.player_id})

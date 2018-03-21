@@ -49,15 +49,15 @@ class Interpreter(object):
     def call_function(self, data):
         data = data.lower()
 
-        if _("weather") in data:
+        if _("command.weather") in data:
             Speaker.talk(self.weather.get_one_day())
-        elif data == _('film.pause'):
+        elif data == _('command.film.pause'):
             self.kodi.pause()
-        elif data == _("film.resume") or data == _("film.play"):
+        elif data == _("command.film.resume") or data == _("command.film.play"):
             self.kodi.resume()
-        elif data == _("film.status"):
+        elif data == _("command.film.status"):
             self.kodi.film_status()
-        elif _("date.hour") in data:
+        elif _("command.date.hour") in data:
             self.calendar.get_time()
         else:
-            Speaker.talk(_("command.unknown"))
+            Speaker.talk(_("speak.command.unknown"))

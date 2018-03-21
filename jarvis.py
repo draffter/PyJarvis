@@ -12,7 +12,7 @@ class Jarvis(object):
         self.config = Config()
         self.interpreter = Interpreter(self.config)
         self.model = "resources/JARVIS.pmdl"
-        self.sensitivity = 0.7
+        self.sensitivity = 0.3
         self.audio_gain = 1.2
         self.detector = snowboydecoder.HotwordDetector(self.model, sensitivity=self.sensitivity,
                                                        audio_gain=self.audio_gain)

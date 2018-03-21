@@ -32,4 +32,4 @@ class Weather(object):
             self.speech_string += " "
         if "main" in data and "temp" in data["main"]:
             temp = data["main"]["temp"]
-            self.speech_string += ngettext("%d weather.degree", "%d weather.degrees", temp) % temp
+            self.speech_string += ngettext("%d speak.weather.degree", "%d speak.weather.degrees", temp) % temp
